@@ -7,8 +7,9 @@ class Node():
 def findHeight(node):
     if node == None:
         return 0
-    else:
-        return max(findHeight(node.left), findHeight(node.right))+1
+    left = findHeight(node.left)
+    right = findHeight(node.right)
+    return max(left, right)+1
 
 
 # Driver program to test above function 
