@@ -7,7 +7,7 @@ modules_namespace = "modules"
 
 def load_and_run(file_name):
     class_name = Path(file_name).stem
-    
+
     m = import_module(f"{modules_namespace}.{class_name}")
     c = dir(m)[0]
     obj = getattr(m, c)
@@ -19,5 +19,6 @@ def load_and_run(file_name):
 
 for file in os.scandir(modules_dir):
     if file.name.endswith(".py"):
+        print(file.name)
         load_and_run(file.name)
         print("===========")
