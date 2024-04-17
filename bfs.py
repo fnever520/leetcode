@@ -22,7 +22,6 @@ class Graph:
             print(s, end = ' ')
 
             for i in self.graph[s]:
-                print('this',i)
                 print(visited[i])
                 if not visited[i]:
                     queue.append(i)

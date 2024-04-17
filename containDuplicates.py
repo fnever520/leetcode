@@ -18,7 +18,7 @@ def find_duplicate1(nums):
     nums.sort()
     for index, n in enumerate(nums):
         if nums[index] == nums[index+1]:
-            return n
+            return nums
 
 def find_duplicate2(nums):
     # Hashmap for reducing time complexity
