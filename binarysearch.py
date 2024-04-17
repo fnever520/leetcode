@@ -1,15 +1,15 @@
 def bs(arr, first, end, target):
     if first<=end:
-        mid = (end - first + first) // 2
+        mid = first + (end - first) // 2
 
         if arr[mid] == target:
             return mid
 
-        elif arr[mid] > target:
+        elif arr[mid] < target:
             return bs(arr, mid+1, end, target)
         
         else:
-            return bs(arr, first, mid+1, bs)
+            return bs(arr, first, mid-1, target)
 
 class Solution(object):
     def search(self, nums, target, start=0, end=None):
@@ -32,6 +32,8 @@ class Solution(object):
                 end = mid - 1
         return -1
 
-sol = Solution()
-print(sol.search([-1,0,3,5,9,12], 9))
+# sol = Solution()
+# print(sol.search([-1,0,3,5,9,12], 9))
             
+num = [-1, 0, 3, 5, 9, 12]
+print(bs(num, 0, len(num)-1, 12))

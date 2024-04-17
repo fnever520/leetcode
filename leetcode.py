@@ -11,8 +11,8 @@ class Solution:
         for i in nums:
             for j in nums:
                 if target == (i+j):
-                    array.append(i)
-        return array
+                    seen.append(i)
+        return seen
 
     def twoSum(self, nums, target):
         """
